@@ -1,0 +1,19 @@
+<h1>Pages#dashboard</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Usuarios</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u|%>
+      <tr>
+        <td><%= u.email %></td>
+        <td><%= u.role %></td>
+        <td><%= link_to 'Change role', change_role_path(u), method: :patch, class: 'btn btn-success' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
